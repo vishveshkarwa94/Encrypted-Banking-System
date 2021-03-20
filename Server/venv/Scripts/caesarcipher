@@ -1,0 +1,5 @@
+#!M:\RIT\5. Spring_20\Data Security\Project\Web Application\Server\venv\Scripts\python.exe
+from caesarcipher.cmdline import main
+
+if __name__ == '__main__':
+    main()

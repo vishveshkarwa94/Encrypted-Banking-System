@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css"></script>
+  <link rel="stylesheet" href="view_info.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><marquee>RIT Bank</marquee></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+       <li><a href="http://localhost:5000/opentaccinfo/{{ custid }}/{{ accno }}/{{ balance }}">Account Home</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="account-summary">
+    <h3 align="center">  Personal Data </h3>
+    <div align="center" class="account-details">
+        <label>First Name:</label> {{ fname }}<br>
+        <label>Last Name:</label> {{ lname }}<br>
+        <label>Address:</label> {{ address }}<br>
+        <label>City:</label> {{ city }}<br>
+        <label>State:</label> {{ state }}<br>
+        <label>Postal Code:</label> {{ postal_code }}<br>
+        <label>Phone number:</label> {{ phone }}<br>
+        <label>Date of Birth:</label> {{ dob}}<br>
+    </div>
+</div>
+
+
+ 
+
+</body>
+<!-- <script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script> -->
+</html>

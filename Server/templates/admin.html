@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css"></script>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %}
+		  <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			{{message}}
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+	
+	{% block body %}{% endblock %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><marquee>RIT Bank</marquee></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://localhost:5000/deleteolddata/{{ uname }}/{{ role }}">Delete Expired Data</a></li>
+        <li><a href="http://localhost:5000/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+  </div>
+</nav>
+<br>
+<table align="center" id="example" class="table table-striped table-bordered" style="width:80%">
+    <thead>
+        <tr>
+            {% for head in headers %}
+            <th> {{ head }} </th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+            <tr>
+                {% for dat in row %}
+               <td> {{ dat }} </td>
+                {% endfor %}
+            </tr>
+         {% endfor %}
+    </tbody>
+
+</table>
+
+</body>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+</html>

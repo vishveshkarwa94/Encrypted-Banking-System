@@ -1,0 +1,10 @@
+.account-details {
+    border: 2 px solid black !important;
+    padding: 20px !important;
+    BORDER: 1PX SOLID !important;
+    BACKGROUND: beige !important;
+    font-size: 18px;
+    line-height: 2.6;
+    display: flex;
+    flex-direction: column;
+}

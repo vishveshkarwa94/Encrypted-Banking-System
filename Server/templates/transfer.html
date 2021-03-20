@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css"></script>
+  <!--<link rel="stylesheet" href="{{ url_for('static', filename = 'styles/transfer.css') }}"> -->
+    <style>
+        .navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+}
+.account-details {
+    border: 2 px solid black;
+    padding: 10px;
+    BORDER: 100PX SOLID;
+    BACKGROUND: white;
+    font-size: 14px;
+    line-height: 2;
+}
+    </style>
+</head>
+  <body>
+  <div class="container" style="min-height:100% width:80%">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %}
+		  <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			{{message}}
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+	
+	{% block body %}{% endblock %}
+	</div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><marquee>RIT Bank</marquee></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://localhost:5000/opentaccinfo/{{ custid }}/{{ accno }}/{{ balance }}">Account Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="account-summary">
+	  <label>Account Number : </label> {{ accno }}<br />
+      <label>Account Balance : </label> $ {{ balance }}<br />
+      <form action = "http://localhost:5000/transact/{{ custid }}" method="POST">
+	   <input type="hidden" id="accno" name="accno" value= {{ accno }}>
+	    <input type="hidden" id="balance" name="balance" value= {{ balance }}>
+        <h3 align="center">  Select operation and the amount </h3>
+        <div class="account-details">
+            <label>Operation : </label> <br />
+              <input type="radio" id="deposit" name="type" value="depo" required> Deposit
+              <input type="radio" id="withdraw" name="type" value="with" style='margin-left:16px'> Withdraw <br><br>
+            <label> Amount : </label><br>
+              <label> $ </label><input type="number" name = "amt" style='margin-left:16px'/> <br><br>
+            <button name="submit" class="account-summary" type="submit" value="Submit">SUBMIT</button>
+        </div>
+      </form>
+
+    </div>
+
+  </body>
+</html>

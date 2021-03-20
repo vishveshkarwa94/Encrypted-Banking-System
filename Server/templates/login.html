@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles/index.css') }}">
+</head>
+<body>
+<div class="container" style="min-height:100% width:80%">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %}
+		  <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			{{message}}
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
+	{% block body %}{% endblock %}
+</div>
+<div class="login-form" >
+    <form action="http://localhost:5000/login" method="POST">
+        <h4 align="center">Login</h4>
+        <Label> Account Type: </Label>
+		<div class="account-type">
+         <input type="radio" id="customer" name="accType" value="C" required>
+          <label for="customer">Customer</label>
+        <input type="radio" id="admin" name="accType" value="A" style='margin-left:16px'>
+          <label for="admin">Employee</label><br>
+        </div>
+        <input type="text" placeholder="Username" class="input" name="uname" required><br />
+        <input type="password" placeholder="Password" class="input" name="pwd" required><br />
+        <button name="submit" class="sign-in" type="submit" value="SignIn">Sign In</button>
+    </form>
+    <p class="text-center"><a href="http://localhost:5000/signup">Create an Account</a></p>
+</div>
+</body>
+</html>

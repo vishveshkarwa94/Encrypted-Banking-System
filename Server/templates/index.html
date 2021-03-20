@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+<title> Sign up and Log in </title>
+<link href='http://fonts.googleapis.com/css?family=Lobster|Pacifico:400,700,300|Roboto:400,100,100italic,300,300italic,400italic,500italic,500' ' rel='stylesheet' type='text/css'>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles/index.css') }}">
+</head>
+<body>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="user-sign-up-form">
+          <form action="http://localhost:5000/createAccount" method="post">
+            <h4 align="center">Sign Up </h4>
+            <input type="text" placeholder="First Name" class="input" name="fname" required><br />
+            <input type="text" placeholder="Last Name" class="input" name="lname" required><br />
+            <input type="text" placeholder="User ID" class="input" name="id" required><br />
+            <input type="text" placeholder="Password" class="input" name="pwd" required><br />
+            <input type="text" placeholder="Address" class="input" name="address" required><br />
+            <input type="text" placeholder="City" class="input" name="city" required><br />
+            <input type="text" placeholder="State" class="input" name="state" required><br />
+            <input type="zipcode" name="zip" placeholder="Zipcode" pattern="[0-9]{5}" class="input" required><br />
+            <input type="text" name="ssn" placeholder="SSN (555-55-5555)" pattern="\d{3}-?\d{2}-?\d{4}" class="input" required><br />
+         <input type="tel"  name="phone-number" placeholder="Phone Number (555-555-5555)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="input" required><br />
+         <input type="text" placeholder="Date of Birth (MM-DD-YY)" class="input" name="dob" required><br />
+         <div class="account-type">
+         <Label> Account Type: </Label>
+         <input type="radio" id="individual" name="accType" value="I">
+          <label for="individual">Individual</label><br>
+        <input type="radio" id="business" name="accType" value="B">
+          <label for="business">Business</label><br>
+        </div>
+		<div class="clearfix">
+            <label class="pull-left checkbox-inline"><input type="checkbox" required> I agree to the <a href ="http://localhost:5000/terms" class="conditions-redirect"> Terms and Conditions</a> </label>
+        </div>
+        <div class="su-login">
+		        <button name="submit" class="b-submit" type="submit" value="Create Account">Submit</button>
+        </div>
+        </form>
+        <p> Already have an account ? </p><a href ="http://localhost:5000/" class="login-redirect"> Login</a>
+        </div>
+      </div>
+  </div>
+
+
+</body>
+</html>

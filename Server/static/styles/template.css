@@ -1,0 +1,23 @@
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border-radius: 0px !important;
+}
+#example_wrapper{
+    border: 1px solid green;
+    margin-top: 20px;
+    height: auto;
+    padding:10px;
+    width:100%;
+    overflow:scroll ;
+    /* margin-left:300px; */
+}
+.account-details {
+    border: 2 px solid black !important;
+    padding: 20px !important;
+    BORDER: 1PX SOLID !important;
+    BACKGROUND: beige !important;
+    font-size: 18px;
+    line-height: 2.6;
+}

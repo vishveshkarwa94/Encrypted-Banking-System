@@ -1,0 +1,10 @@
+# Roles info
+INSERT INTO `bank_database`.`roles`
+(`roleid`,
+`role`,
+`tables`,
+`access`)
+VALUES
+(1,'manager','customer','CUST_ID,FIRST_NAME,LAST_NAME,DOB,PHONE_NUMER,ADDRESS,CITY,CUST_TYPE_CD,SSN,POSTAL_CODE,STATE'),
+(2,'accountant','customer|account','CUST_ID,CUST_TYPE_CD,FIRST_NAME,LAST_NAME|ACCOUNT_ID,AVAIL_BALANCE'),
+(3,'sales and marketing','customer','FIRST_NAME,LAST_NAME,PHONE_NUMER,ADDRESS,CITY,POSTAL_CODE,STATE');

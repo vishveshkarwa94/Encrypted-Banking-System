@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+<title> Sign up and Log in </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css"></script>
+  <style>
+    .abc {
+    border: 2px solid black;
+    padding: 20px;
+    BORDER: 5PX SOLID;
+    BACKGROUND: white;
+    font-size: 14px;
+    line-height: 2;
+    margin: 25px 600px 75px;
+    }
+  </style>
+</head>
+<body>
+
+      <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><marquee>RIT Bank</marquee></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+       <li><a href="http://localhost:5000/opentaccinfo/{{ custid }}/{{ accno }}/{{ balance }}">Account Home</a></li>
+    </ul>
+  </div>
+</nav>
+        <H3 align="center"> Select fields to Update data and Enter values in the box provided </H3><br>
+
+          <form action="http://localhost:5000/updateinfo/{{ custid }}/{{ accno }}/{{ balance }}" method="post">
+            <div class="abc" align="center">
+            <input type="checkbox" value="FIRST_NAME" class="input" name="ip" ><input type="text" placeholder=" First Name " class="input" name="FIRST_NAME" style='margin-left:16px'><br><br>
+            <input type="checkbox" value="LAST_NAME" class="input" name="ip" ><input type="text" placeholder=" Last Name " class="input" name="LAST_NAME" style='margin-left:16px'><br /><br>
+            <input type="checkbox" value="ADDRESS" class="input" name="ip" ><input type="text" placeholder=" Address " class="input" name="ADDRESS" style='margin-left:16px'><br /><br>
+            <input type="checkbox" value="CITY" class="input" name="ip" ><input type="text" placeholder=" City " class="input" name="CITY" style='margin-left:16px'><br /><br>
+            <input type="checkbox" value="STATE" class="input" name="ip" ><input type="text" placeholder=" State " class="input" name="STATE" style='margin-left:16px'><br /><br>
+            <input type="checkbox" value="POSTAL_CODE" class="input" name="ip" ><input type="zipcode" name="POSTAL_CODE" placeholder=" Zipcode " pattern="[0-9]{5}" class="input" style='margin-left:16px'><br /><br>
+            <input type="checkbox" value="PHONE_NUMER" class="input" name="ip" ><input type="tel"  name="PHONE_NUMER" placeholder=" Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="input" style='margin-left:16px'><br /><br>
+            <input type="checkbox" value="DOB" class="input" name="ip" ><input type="text" placeholder=" Date of Birth" class="input" name="DOB" style='margin-left:16px'/>
+          </div>
+            <div align="center">
+            <button type="submit" value="update">Update</button>
+          </div><br><br>
+          </form>
+
+
+
+
+</body>
+</html>

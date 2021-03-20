@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css"></script>
+  <!--<link rel="stylesheet" href="view_info.css">-->
+      <style>
+    .abc {
+    border: 2px solid black;
+    padding: 20px;
+    BORDER: 5PX SOLID;
+    BACKGROUND: white;
+    font-size: 14px;
+    line-height: 2;
+    margin: 25px 600px 75px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><marquee>RIT Bank</marquee></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+       <li><a href="http://localhost:5000/opentaccinfo/{{ custid }}/{{ accno }}/{{ balance }}">Account Home</a></li>
+    </ul>
+  </div>
+</nav>
+<H3 align="center"> Select fields to Delete data. </H3><br><br>
+
+		<form action="http://localhost:5000/deleteinfo/{{ custid }}/{{ accno }}/{{ balance }}" method="post">
+            <div class="abc" align="center">
+            <input type="checkbox" value="ADDRESS" class="input" name="ip" >  Address<br /><br>
+            <input type="checkbox" value="CITY" class="input" name="ip" >  City<br /><br>
+            <input type="checkbox" value="STATE" class="input" name="ip" >  State<br /><br>
+			<input type="checkbox" value="POSTAL_CODE" class="input" name="ip" >  Postal Code<br /><br>
+			<input type="checkbox" value="FIRST_NAME" class="input" name="ip" >  First Name<br /><br>
+            <input type="checkbox" value="LAST_NAME" class="input" name="ip" >  Last Name<br /><br>
+            <input type="checkbox" value="PHONE_NUMER" class="input" name="ip" >  Phone Number<br /><br>
+            <input type="checkbox" value="DOB" class="input" name="ip" >  Date of Birth<br />
+            </div>
+            <div align="center">
+                <button value="submit">Delete my information</button>
+            </div>
+		</form>
+
+</body>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+</html>
